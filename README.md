@@ -46,4 +46,11 @@ La configuración fue verificada exitosamente mediante pruebas de conectividad d
 - **Análisis de Conectividad**: Resolución de problemas y verificación de flujo de datos.
 
 ---
+## 🤖 Colaboración y Mentoría
+Este laboratorio fue desarrollado con el apoyo de **IA (Google Gemini)** como mentor técnico. La IA guio el proceso de:
+- Configuración de sintaxis en Cisco IOS.
+- Cálculo de Wildcard Masks.
+- Documentación del proyecto y despliegue del repositorio mediante Git/PowerShell.
+
+---
 *Este laboratorio ha sido completado como parte de mi formación técnica en Defensa de Redes.*
