@@ -10,7 +10,7 @@
 Este proyecto demuestra la implementación práctica de políticas de seguridad perimetral utilizando un Router Cisco R1. El objetivo principal es aplicar el **Principio de Menor Privilegio (PoLP)** para segmentar el tráfico de red y proteger servicios críticos.
 
 ## 📐 Topología de la Red
-![Topología de Red](./Topologia/topologia.jpg)
+![Topología de Red](./img/topologia.jpg)
 
 *Diseño de infraestructura con segmentación de subredes para PC1, PC2 y Servidor.*
 
@@ -33,7 +33,7 @@ Se implementó una **ACL Extendida con Nombre (HTTP_ONLY)**:
 ## 📊 Validación y Resultados
 La configuración fue verificada exitosamente mediante pruebas de conectividad directa y auditoría de la tabla de acceso en el router:
 
-![Verificación de Configuración](./CLI/verificacion.jpg)
+![Verificación de Configuración](./img/verificacion.jpg)
 
 *Captura de la CLI de R1 mostrando los "matches" de paquetes, lo que confirma la efectividad de las reglas aplicadas.*
 
