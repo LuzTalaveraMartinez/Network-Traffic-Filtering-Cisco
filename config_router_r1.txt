@@ -1,0 +1,39 @@
+! ************************************************************
+! PROYECTO: SEGURIDAD PERIMETRAL - ACLS EXTENDIDAS
+! DISPOSITIVO: ROUTER R1
+! OBJETIVO: SEGMENTACIÓN DE TRÁFICO PC1 (FTP) Y PC2 (HTTP)
+! ************************************************************
+
+enable
+configure terminal
+
+! --- PARTE 1: ACL EXTENDIDA NUMERADA (PARA LAN PC1) ---
+! Permite tráfico FTP (puerto 21) y PING (ICMP) hacia el servidor
+access-list 100 permit tcp 172.22.34.64 0.0.0.31 host 172.22.34.62 eq ftp
+access-list 100 permit icmp 172.22.34.64 0.0.0.31 host 172.22.34.62
+! Nota: El "deny ip any any" es implícito al final de la lista.
+
+! --- PARTE 2: ACL EXTENDIDA CON NOMBRE (PARA LAN PC2) ---
+! Permite tráfico WEB (puerto 80) y PING (ICMP) hacia el servidor
+ip access-list extended HTTP_ONLY
+ permit tcp 172.22.34.96 0.0.0.15 host 172.22.34.62 eq www
+ permit icmp 172.22.34.96 0.0.0.15 host 172.22.34.62
+exit
+
+! --- PARTE 3: APLICACIÓN DE ACLS A LAS INTERFACES ---
+! Aplicamos en la interfaz de entrada (inbound) más cercana al origen
+
+interface GigabitEthernet0/0
+ description LAN_PC1_SEGURIDAD
+ ip access-group 100 in
+exit
+
+interface GigabitEthernet0/1
+ description LAN_PC2_SEGURIDAD
+ ip access-group HTTP_ONLY in
+exit
+
+! --- VERIFICACIÓN ---
+do show access-lists
+write memory
+end
