@@ -11,6 +11,7 @@ Este proyecto demuestra la implementación práctica de políticas de seguridad 
 
 ## 📐 Topología de la Red
 ![Topología de Red](./Topologia/topologia.jpg)
+
 *Diseño de infraestructura con segmentación de subredes para PC1, PC2 y Servidor.*
 
 ---
@@ -33,6 +34,7 @@ Se implementó una **ACL Extendida con Nombre (HTTP_ONLY)**:
 La configuración fue verificada exitosamente mediante pruebas de conectividad directa y auditoría de la tabla de acceso en el router:
 
 ![Verificación de Configuración](./CLI/verificacion.jpg)
+
 *Captura de la CLI de R1 mostrando los "matches" de paquetes, lo que confirma la efectividad de las reglas aplicadas.*
 
 ---
